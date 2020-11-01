@@ -70,7 +70,7 @@ class Users extends Component {
 
   renderUsers = () => {
     return (
-      <Query query={GET_NAMES} notifyOnNetworkStatusChange>
+      <Query query={GET_NAMES} fetchPolicy="network-only">
         {({loading, error, data, fetchMore, refetch, networkStatus}) => {
           if (!data || loading)
             return (
