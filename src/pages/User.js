@@ -39,6 +39,7 @@ class User extends Component {
     } catch (err) {
       console.log('err', err)
       toast.error(parseErrorMessage(err))
+    } finally {
       this.setState({submitting: false})
     }
   }
