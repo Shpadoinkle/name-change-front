@@ -14,6 +14,7 @@ import {
 } from 'semantic-ui-react'
 import Padder from '../components/Padder'
 import {GET_ME} from '../graphql/queries'
+import {changeName} from '../graphql/mutations'
 import {parseErrorMessage} from '../utils/helpers'
 
 class User extends Component {
@@ -34,7 +35,7 @@ class User extends Component {
     console.log(name, currentName)
     this.setState({submitting: true})
     try {
-      // const result = await changeName(name)
+      const result = await changeName(name)
       toast.success('Name change successful!')
     } catch (err) {
       console.log('err', err)

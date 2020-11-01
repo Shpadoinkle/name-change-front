@@ -30,5 +30,6 @@ export async function changeName(input) {
     `,
     variables: {input},
     refetchQueries: ['GET_ME'],
+    awaitRefetchQueries: true,
   })
 }
